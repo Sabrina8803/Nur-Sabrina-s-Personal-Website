@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - IML470</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(images/gif.gif);
+            background-size: cover;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); 
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Playfair Display';
+            background-color: #F69697;
+        }
+        h2 {
+            font-family: 'Montserrat';
+            color: #ac4f4f;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+            font-size: 1.2em; 
+        }
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #customers td, #customers th {
+            border: 1px solid #443131;
+            padding: 20px;
+        }
+        #customers tr:nth-child(even) {
+            background-color: #ffb99680;
+        }
+        #customers tr:hover {
+            background-color: #e2d6d6;
+        }
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #fb9280cc;
+            color: rgb(114, 46, 46);
+        }
+        .clock {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+            z-index: 1000;
+        }
+
+        /* Hamburger menu styles */
+    .hamburger {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 3px;
+      background-color: #333;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 200px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      padding-top: 60px;
+    }
+
+    .menu a {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .menu a:hover {
+      background-color: #f4f4f4;
+    }
+
+    .show-menu {
+      display: block;
+    }
+    </style>
+</head>
+<body>
+
+  <!-- Hamburger menu -->
+<div class ="hamburger" onclick="toggleMenu()">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="menu" class="menu">
+  <a href="index.html">Home</a>
+  <a href="biodata.html">About Me</a>
+  <a href="topic.html">My Content</a>
+  <a href="studies.html">View Courses</a>
+</div>
+
+    <div class="container">
+        <h1>Overview of the Semester</h1>
+        <div class="contact-info">
+            <h2>Semester Snapshot</h2>
+        </div>
+        <table id="customers">
+            <tr>
+                <th>No.</th>
+                <th>Subject's Code</th>
+                <th>Subject's Name</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>CTU554</td>
+                <td>Appreciation of Ethics and Civilization II</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>IML470</td>
+                <td>Introduction to The Development of Sesawang and Library Portal</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>IML460</td>
+                <td>ICT Application in Libraries and Media Centers</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>MGT400</td>
+                <td>Introduction to Management</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>TAC401</td>
+                <td>Introductory Arabic (Level 1)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>HGR111</td>
+                <td>Management of Family Institutions</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>IML465</td>
+                <td>Digital Reference Services</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>IMC452</td>
+                <td>Introduction to Metadata</td>
+            </tr>
+        </table>
+        <button onclick="location.href='biodata.html'" style="display: block; margin: auto;">BACK</button>
+
+        <footer style="text-align: center; font-size: 15px; margin-top: 30px; border: 2px solid black; width: max-content; border-radius: 25px; display: block; margin-left: auto; margin-right: auto; padding: 5px;">
+          &#169; NUR SABRINA, 2024
+    </div>
+
+    <!-- Clock -->
+    <div id="clock" class="clock"></div>
+
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, '0');
+            var minutes = now.getMinutes().toString().padStart(2, '0');
+            var seconds = now.getSeconds().toString().padStart(2, '0');
+            var timeString = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to set the clock immediately
+
+        function toggleMenu() {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('show-menu');
+  }
+    </script>
+
+</body>
+</html>
+
+
+

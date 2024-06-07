@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - IML470</title>
+  <!-- Importing fonts from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('images/bg3.jpg'); /* Background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-attachment: fixed; /* Fix the background image in place */
+  color: #333;
+  height: 100vh; /* Full height of the viewport */
+}
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Slight white background for readability */
+    }
+    h1 {
+      font-family: 'Playfair Display';
+      background-color: #F2B1B1;
+      color: rgb(37, 35, 35);
+      text-align: center;
+      margin-top: 5%;
+    }
+    p {
+      line-height: 1.6;
+      text-align: justify; /* Justify text in bio section */
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: 20px;
+      padding: 15px;
+    }
+    .bio {
+      margin-top: 40px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px; /* Space between buttons */
+      margin-top: 20px; /* Added margin to create space between sections */
+    }
+    .content {
+      display: none; /* Initially hide the content */
+    }
+
+    .content.photos, .content.music, .content.videos {
+      display: flex; /* Use flexbox to arrange content */
+      flex-wrap: wrap; /* Allow wrapping if necessary */
+      justify-content: center; /* Center content */
+      gap: 20px; /* Adjust gap for consistent spacing */
+    }
+
+    .content.photos .photo, .content.music video, .content.videos video {
+      text-align: center; /* Center content inside items */
+    }
+
+    .content.music video, .content.videos video {
+      width: 300px; /* Set the width of the videos */
+      height: 500px; /* Set the height of the videos */
+      object-fit: cover; /* Maintain aspect ratio */
+    }
+
+    .buttons button {
+      margin: 10px; /* Add margin to buttons for spacing */
+    }
+
+    .clock {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    footer {
+      text-align: center; /* Center-align the text in the footer */
+      font-size: 15px;
+      margin-top: 30px;
+      border: 2px solid black;
+      width: max-content;
+      border-radius: 25px;
+      padding: 5px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Hamburger menu styles */
+    .hamburger {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 3px;
+      background-color: #333;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 200px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      padding-top: 60px;
+    }
+
+    .menu a {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .menu a:hover {
+      background-color: #f4f4f4;
+    }
+
+    .show-menu {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Clock -->
+    <div id="clock" class="clock"></div>
+
+    <h1>Media Medley</h1>
+    <p>This section displays the photos I've taken, the music I've edited, and various art videos that I like and save. My deep interest in art drives me to constantly explore and watch art videos for inspiration and enjoyment. I love immersing myself in different forms of creative expression and learning from them.</p>
+
+    <div class="bio">
+      <!-- Buttons for content toggling -->
+      <div class="buttons">
+        <button onclick="toggleContent('photos')">Photos</button>
+        <button onclick="toggleContent('music')">Music</button>
+        <button onclick="toggleContent('videos')">Videos</button>
+      </div>
+
+     <!-- Hamburger menu -->
+<div class ="hamburger" onclick="toggleMenu()">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="menu" class="menu">
+  <a href="index.html">Home</a>
+  <a href="biodata.html">About Me</a>
+  <a href="topic.html">My Content</a>
+  <a href="studies.html">View Courses</a>
+</div>
+
+
+      <!-- Photo content -->
+      <div class="content photos">
+        <div class="photo"><img src="images/leo.jpg" alt="Shared Photo" width="250" height="250"></div>
+        <div class="photo"><img src="images/bear.jpg" alt="Shared Photo" width="250" height="250"></div>
+        <div class="photo"><img src="images/elephant.jpg" alt="Shared Photo" width="250" height="250"></div>
+        <div class="photo"><img src="images/merdeka.jpg" alt="Shared Photo" width="250" height="250"></div>
+      </div>
+
+      <!-- Music content -->
+      <div class="content music">
+        <video controls>
+          <source src="video/video_2024-06-03_19-33-40.mp4" type="video/mp4">
+        </video>
+        <video controls>
+          <source src="video/better alone 2.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Video content -->
+      <div class="content videos">
+        <div class="video-container">
+          <video controls>
+            <source src="video/Snaptik.app_7302728431295368481.mp4" type="video/mp4">
+          </video>
+          <a href="https://www.tiktok.com/@vpvtdot22/video/7302728431295368481?is_from_webapp=1&sender_device=pc&web_id=7376174216162674183" style="display: block; text-align: center; margin-top: 5px;">Click this to visit the video</a>
+        </div>
+        <div class="video-container">
+          <video controls>
+            <source src="video/Snaptik.app_7294253968585280811.mp4" type="video/mp4">
+          </video>
+          <a href="https://www.tiktok.com/@aminaillustration/video/7294253968585280811?is_from_webapp=1&sender_device=pc&web_id=7376174216162674183" style="display: block; text-align: center; margin-top: 5px;">Click this to visit the video</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button onclick="location.href='biodata.html'" style="display: block; margin: auto;">BACK</button>
+    </div>
+
+    <footer>&#169; NUR SABRINA, 2024</footer>
+  </div>
+
+  <script>
+    function toggleContent(type) {
+      var contents = document.querySelectorAll('.content');
+      contents.forEach(function(content) {
+        content.style.display = 'none'; // Hide all content
+      });
+
+      var activeContent = document.querySelector('.' + type);
+      activeContent.style.display = 'flex'; // Show the selected content
+    }
+
+    function updateClock() {
+      var now = new Date();
+      var hours = now.getHours().toString().padStart(2, '0');
+      var minutes = now.getMinutes().toString().padStart(2, '0');
+      var seconds = now.getSeconds().toString().padStart(2, '0');
+      var timeString = hours + ':' + minutes + ':' + seconds;
+      document.getElementById('clock').textContent = timeString;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock(); // Initial call to set the clock immediately
+
+    
+  function toggleMenu() {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('show-menu');
+  }
+
+
+  </script>
+</body>
+</html>
+
